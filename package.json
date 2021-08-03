@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --public localhost:8080 --port 8080",
     "build": "vue-cli-service build",
-    "build-library" : "vue-cli-service build --target lib --name vue-cookie-bar-simple ./src/components/install.ts",
+    "build-library" : "vue-cli-service build --target lib --name vue-cookie-bar-plugin ./src/plugins/CookieBar/index.ts",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
