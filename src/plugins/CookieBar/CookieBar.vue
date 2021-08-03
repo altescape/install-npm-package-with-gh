@@ -42,8 +42,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import Haven from '@chiiya/haven'
+import { HavenOptions } from '@chiiya/haven/dist/types'
 import Overlay from './Overlay.vue'
 import DummyNotificationBox from './DummyNotificationBox.vue'
+
+const DEFAULT_DOMAIN = '.swiftaid.co.uk'
 
 @Component({
   components: {
@@ -52,8 +56,8 @@ import DummyNotificationBox from './DummyNotificationBox.vue'
   },
 })
 export default class CookieBar extends Vue {
-  $haven: any
-  $havenOptions: any
+  $haven: typeof Haven | undefined
+  $havenOptions: HavenOptions | undefined
   cookiesResolved = true
 
   created(): void {
@@ -61,8 +65,10 @@ export default class CookieBar extends Vue {
   }
 
   mounted(): void {
-    this.$haven.on('analytics-enabled', this.handleCookies)
-    this.$haven.on('analytics-disabled', this.handleCookies)
+    if (this.$haven !== undefined) {
+      this.$haven.on('analytics-enabled', this.handleCookies)
+      this.$haven.on('analytics-disabled', this.handleCookies)
+    }
   }
 
   hasResolvedCookies(): boolean {
@@ -79,7 +85,13 @@ export default class CookieBar extends Vue {
   }
 
   setCookie(name: string, value: string | boolean, days?: number): void {
-    this.$havenOptions.domains.forEach((domain: string) => {
+    let domains = [DEFAULT_DOMAIN]
+
+    if (this.$havenOptions !== undefined) {
+      domains = this.$havenOptions.domains
+    }
+
+    domains.forEach((domain: string) => {
       let domainAttr = ''
       if (window.location.hostname !== 'localhost') {
         domainAttr = `; domain=${domain}`
@@ -101,11 +113,13 @@ export default class CookieBar extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@use "sass:math";
+
 $primary-font: 'Poppins' sans-serif;
 $secondary-font: 'Open Sans', sans-serif;
 $pos: 20px;
 $pad: 30px;
-$mobilePad: $pad/1.5;
+$mobilePad: math.div($pad, 1.5);
 $btn-height: 52px;
 $btn-height-sm: 38px;
 $primary-color: #00a8f4;
@@ -246,7 +260,7 @@ $white: #fff;
     text-align: left;
     padding: 0;
     line-height: 1.2;
-    margin: 0 0 $mobilePad/2 0;
+    margin: 0 0 math.div($mobilePad, 2) 0;
 
     @include mobile-up {
       font-size: 20px;
