@@ -1,4 +1,4 @@
-# cookie-bar
+# vue-cookie-bar-plugin
 
 ## Project setup
 ```

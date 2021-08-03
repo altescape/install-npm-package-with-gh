@@ -2,12 +2,21 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <CookieBar>
+      <template v-slot:title>🍪 Can we use optional cookies?</template>
+      <template v-slot:text>
+        These cookies help us keep our website safe and give you a better
+        experience. We won’t turn them on unless you accept. Want to know more
+        or adjust your preferences? Here's our
+        <a href="https://www.swiftaid.co.uk/legal/cookies/">cookie policy</a>
+      </template>
+    </CookieBar>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import { Component, Vue } from 'vue-property-decorator'
+import HelloWorld from './components/HelloWorld.vue'
 
 @Component({
   components: {

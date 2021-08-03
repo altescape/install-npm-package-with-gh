@@ -1,14 +1,16 @@
 {
-  "name": "cookie-bar",
+  "name": "vue-cookie-bar-plugin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --public localhost:8080 --port 8080",
     "build": "vue-cli-service build",
+    "build-library" : "vue-cli-service build --target lib --name vue-cookie-bar-simple ./src/components/install.ts",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@chiiya/haven": "^0.7.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
