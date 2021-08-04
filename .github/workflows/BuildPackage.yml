@@ -28,11 +28,13 @@ jobs:
     - name: Build library
       run:  npm run build-library
 
-    - name: configure npm registry proxy
+    - name: Configure npm registry proxy
       uses: ahmadnassri/action-github-registry-npm-proxy@v2
       with:
         token: ${{ secrets.PCK_TOKEN }}
         scope: ${{ github.repository_owner }}
         path: ${{ github.workspace }}/.npmrc
         export_user_config: true
+
+    - name: Publish to npm
       run: npm publish
