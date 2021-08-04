@@ -28,10 +28,10 @@ jobs:
     - name: Build library
       run:  npm run build-library
 
-    - name: Add NPM CLI
-      run: npm install -g npm-cli-login
-
-    - name: Login to NPM
-      run: |
-        NPM_USER=${{ secrets.PCK_USER }} NPM_PASS=${{ secrets.PCK_TOKEN }} NPM_EMAIL=${{ secrets.PCK_EMAIL }} npm-cli-login
-        npm publish
+    - name: configure npm registry proxy
+      uses: ahmadnassri/action-github-registry-npm-proxy@v2
+      with:
+        token: ${{ secrets.PCK_TOKEN }}
+        scope: ${{ github.repository_owner }}
+        path: ${{ github.workspace }}/.npmrc
+        export_user_config: true
