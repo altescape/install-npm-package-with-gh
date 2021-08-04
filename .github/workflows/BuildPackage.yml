@@ -33,5 +33,5 @@ jobs:
 
     - name: Login to NPM
       run: |
-        PM_USER=altescape NPM_PASS=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 NPM_EMAIL=hello@michaelwatts.me npm-cli-login
+        PM_USER=${{ secrets.PCK_USER }} NPM_PASS=${{ secrets.PCK_TOKEN }} NPM_EMAIL=${{ secrets.PCK_EMAIL }} npm-cli-login
         npm publish
