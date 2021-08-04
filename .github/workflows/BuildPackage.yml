@@ -35,3 +35,4 @@ jobs:
         scope: ${{ github.repository_owner }}
         path: ${{ github.workspace }}/.npmrc
         export_user_config: true
+      run: npm publish
