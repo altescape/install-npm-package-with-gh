@@ -1,6 +1,6 @@
 {
   "name": "@altescape/vue-cookie-bar-plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "repository": "https://github.com/altescape/vue-cookie-bar-plugin",
   "publishConfig": {

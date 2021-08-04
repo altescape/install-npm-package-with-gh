@@ -2,7 +2,7 @@
   <div id="cookie-bar-overlay"></div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #cookie-bar-overlay {
   position: fixed;
   bottom: 0;
