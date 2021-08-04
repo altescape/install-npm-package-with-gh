@@ -31,7 +31,7 @@ jobs:
     - name: Configure npm registry proxy
       uses: ahmadnassri/action-github-registry-npm-proxy@v2
       with:
-        token: ${{ secrets.PCK_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         scope: ${{ github.repository_owner }}
         path: ${{ github.workspace }}/.npmrc
         export_user_config: true
