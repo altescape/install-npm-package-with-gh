@@ -1,0 +1,37 @@
+name: BuildPackage
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-linux:
+    name: Build, test, pack and publish
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code onto host
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install node modules
+      run: npm ci
+
+    - name: Run unit tests
+      run:  npm run test:unit
+
+    - name: Build library
+      run:  npm run build-library
+
+    - name: Add NPM CLI
+      run: npm install -g npm-cli-login
+
+    - name: Login to NPM
+      run: |
+        PM_USER=altescape NPM_PASS=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 NPM_EMAIL=hello@michaelwatts.me npm-cli-login
+        npm publish
