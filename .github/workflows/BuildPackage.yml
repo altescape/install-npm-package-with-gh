@@ -33,5 +33,5 @@ jobs:
 
     - name: Login to NPM
       run: |
-        PM_USER=${{ secrets.PCK_USER }} NPM_PASS=${{ secrets.PCK_TOKEN }} NPM_EMAIL=${{ secrets.PCK_EMAIL }} npm-cli-login
+        NPM_USER=${{ secrets.PCK_USER }} NPM_PASS=${{ secrets.PCK_TOKEN }} NPM_EMAIL=${{ secrets.PCK_EMAIL }} npm-cli-login
         npm publish
