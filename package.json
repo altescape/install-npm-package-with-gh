@@ -1,8 +1,8 @@
 {
-  "name": "@streeva/vue-cookie-bar-plugin",
+  "name": "@altescape/vue-cookie-bar-plugin",
   "version": "0.1.0",
   "private": true,
-  "repository": "https://github.com/streeva/vue-cookie-bar-plugin",
+  "repository": "https://github.com/altescape/vue-cookie-bar-plugin",
   "publishConfig": {
     "registry":"https://npm.pkg.github.com"
   },
