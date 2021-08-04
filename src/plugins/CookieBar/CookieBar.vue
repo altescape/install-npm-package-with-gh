@@ -47,7 +47,7 @@ import { HavenOptions } from '@chiiya/haven/dist/types'
 import Overlay from './Overlay.vue'
 import DummyNotificationBox from './DummyNotificationBox.vue'
 
-const DEFAULT_DOMAIN = '.swiftaid.co.uk'
+const DEFAULT_DOMAIN = '.example.co.uk'
 
 @Component({
   components: {

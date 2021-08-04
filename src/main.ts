@@ -6,7 +6,7 @@ Vue.config.productionTip = false
 
 Vue.use(CookieBar, {
   havenOptions: {
-    domains: ['.swiftaid.co.uk'],
+    domains: ['.example.co.uk'],
     services: [
       {
         name: 'google-tag-manager',

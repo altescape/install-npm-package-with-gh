@@ -38,7 +38,7 @@ npm run lint
 Add to your app main js or ts file:
 
 ```js
-import CookieBar from './plugins/CookieBar'
+import CookieBar from '@altescape/vue-cookie-bar-plugin'
 
 Vue.use(CookieBar, {
   havenOptions: {
@@ -67,7 +67,7 @@ Then place the following in a single main Vue file such as `App.vue`:
     These cookies help us keep our website safe and give you a better
     experience. We won’t turn them on unless you accept. Want to know more
     or adjust your preferences? Here's our
-    <a href="https://www.swiftaid.co.uk/legal/cookies/">cookie policy</a>
+    <a href="https://www.example.co.uk/legal/cookies/">cookie policy</a>
   </template>
 </CookieBar>
 ```
