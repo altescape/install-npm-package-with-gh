@@ -1,7 +1,9 @@
 {
   "name": "vue-cookie-bar-plugin",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "repository": "",
+  "files": ["dist/*"],
   "scripts": {
     "serve": "vue-cli-service serve --public localhost:8080 --port 8080",
     "build": "vue-cli-service build",
@@ -9,6 +11,7 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "main": "./dist/vue-cookie-bar-plugin.common.js",
   "dependencies": {
     "@chiiya/haven": "^0.7.0",
     "core-js": "^3.6.5",
